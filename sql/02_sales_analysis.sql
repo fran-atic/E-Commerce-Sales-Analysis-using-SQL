@@ -22,7 +22,7 @@ limit 10;
 -- 3) Which countries contribute the highest sales?
 with country_revenue as
 (
-select Country, sum(Quantity * UnitPrice) as revenue_by_country from data_staging2
+select Country, round(sum(Quantity * UnitPrice), 2) as revenue_by_country from data_staging2
 group by Country
 )
 select Country, revenue_by_country, round(revenue_by_country * 100.0 / sum(revenue_by_country) over(), 2) as revenue_percentage
