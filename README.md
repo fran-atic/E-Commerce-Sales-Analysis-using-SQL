@@ -94,8 +94,9 @@ The dataset contains transactional data with the following columns:
 - Removed duplicate entries
 - Checked for cancelled invoices (`InvoiceNo LIKE 'C%'`)
 - Checked for returns (`Quantity < 0`)
-- Checked for zero or negative prices
+- Removed zero or negative prices
 - Checked for blank or null values
+- Removed StockCodes which are not valid(5 integers + optional(alphabets))
 
 ---
 
